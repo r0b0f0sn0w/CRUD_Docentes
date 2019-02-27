@@ -1,6 +1,11 @@
 var LaPeticion = false;
-this.onload = refrescarAlumnos();
-this.onload = refrescar();
+this.onload=refrescarambos();
+
+function refrescarambos(){
+	refrescarAlumnos();
+	refrescar();
+}
+
 function peticion() {
     if (window.XMLHttpRequest) {
         LaPeticion = new XMLHttpRequest();
@@ -112,7 +117,7 @@ function refrescarAlumnos() {
     }
     LaPeticion.onreadystatechange = function () {
         if (LaPeticion.readyState < 4) {
-            document.getElementById("datosTabla").innerHTML = "<tr><td colspan='3'><img src='images/cargando.gif' alt='' style='width:25%'/></td></tr>";
+            document.getElementById("datosTablaAlumnos").innerHTML = "<tr><td colspan='3'><img src='images/cargando.gif' alt='' style='width:25%'/></td></tr>";
         } else if (LaPeticion.readyState === 4) {
             if (LaPeticion.status === 200) {
                 var respuestaAjax = LaPeticion.responseText;
