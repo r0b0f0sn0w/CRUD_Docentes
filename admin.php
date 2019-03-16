@@ -83,11 +83,11 @@
                                         <th>Nombre</th>
                                         <th>Apellido paterno</th>
                                         <th>Apellido materno</th>
-										<th>Matricula</th>
-										<th>Correo electronico</th>
-										<th>Fecha de nacimiento</th>
-										<th>Tipo</th>
-										<th>Opciones</th>
+					<th>Matricula</th>
+					<th>Correo electronico</th>
+					<th>Fecha de nacimiento</th>
+					<th>Tipo</th>
+					<th>Opciones</th>
                                     </tr>
                                 </thead>
                                 <tbody id="datosTabla">
@@ -99,28 +99,31 @@
                 </div>
 		    </div>
 			
-			<!--Tabla de alumnos-->
-			<div class="col">
+                <!--Inician la tablas de las consultas solicitadas-->
+                <div class="col">
                         <div class="card mb-3">
                     <div class="card-header">
-                        <i></i> Lista de Alumnos</div>
+                        <i></i> Consulta Alumnos asignados a docente</div>
                     <div class="card-body">
-			<button type="button" class="btn btn-primary mb-2" onclick="refrescarAlumnos();">Recargar tabla</button>
+			<button type="button" class="btn btn-primary mb-2" onclick="refrescarAlumnosAsignados();">Recargar tabla</button>
 			<div style="margin-top: 10px" id="alertas_tabla">
 			</div>
                         <div class="table-responsive">
                             <table class="table table-bordered" id="tabla" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Nombre</th>
+                                        <th>Matricula</th>
+                                        <th>Nombre(s)</th>
                                         <th>Apellido paterno</th>
                                         <th>Apellido materno</th>
-										<th>Matricula</th>
-										<th>Carrera</th>
-										<th>Grupo</th>
+					<th>Grupo</th>
+					<th>Nombre (profesor)</th>
+                                        <th>Apellido paterno (profesor)</th>
+                                        <th>Apellido materno (profesor)</th>
+					<th>Tipo de docente</th>
                                     </tr>
                                 </thead>
-                                <tbody id="datosTablaAlumnos">
+                                <tbody id="datosTablaAlumnosAsignados">
                                 </tbody>
                             </table>
                         </div>
@@ -128,11 +131,40 @@
                     <div class="card-footer small text-muted"></div>
                 </div>
 		    </div>
-		</div>
-		
-		
-		                <!-- Tabla consultas-->
                 
+                <div class="col">
+                        <div class="card mb-3">
+                    <div class="card-header">
+                        <i></i> Consulta Alumnos asignados a docente en estadia</div>
+                    <div class="card-body">
+			<button type="button" class="btn btn-primary mb-2" onclick="refrescarAlumnosEstadia();">Recargar tabla</button>
+			<div style="margin-top: 10px" id="alertas_tabla">
+			</div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="tabla" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Matricula</th>
+                                        <th>Nombre(s)</th>
+                                        <th>Apellido paterno</th>
+                                        <th>Apellido materno</th>
+					<th>Grupo</th>
+					<th>Empresa</th>
+					<th>Nombre (profesor)</th>
+                                        <th>Apellido paterno (profesor)</th>
+                                        <th>Apellido materno (profesor)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="datosTablaAlumnosAsignadosEstadia">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer small text-muted"></div>
+                </div>
+		    </div>
+                
+		</div>
 	    </div>
 	</div>
     </body>

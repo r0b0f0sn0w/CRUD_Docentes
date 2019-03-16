@@ -6,7 +6,7 @@ function conectarBD() {
 } */
 
 function conectarBD() {
-    $conexion = mysqli_connect("sql173.main-hosting.eu", "u969154419_grupo", "Estadias2019", "u969154419_grupo");
+    $conexion = mysqli_connect("sql173.main-hosting.eu", "u969154419_grupo", "alvino97", "u969154419_grupo");
     return $conexion;
 }
 

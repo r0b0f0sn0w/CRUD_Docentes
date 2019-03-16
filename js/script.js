@@ -8,8 +8,8 @@ function refrescarambos(){
 function login(){
     var nombre = document.getElementById("usuario").value;
     var password = document.getElementById("password").value;
-    if(nombre=="admin"&&password=="password"){
-        this.location("admin.php");
+    if(nombre=="admin"&&password=="admin"){
+        window.location.href="admin.php";
     }else{
         alert("Usuario o contraseña incorrectos");
     }
@@ -142,6 +142,63 @@ function refrescarAlumnos() {
 
 
 
+function refrescarAlumnosAsignados() {
+    var LaPeticion = false;
+    if (window.XMLHttpRequest) {
+        LaPeticion = new XMLHttpRequest();
+    } else {
+        if (window.ActiveXObject) {
+            LaPeticion = new ActiveXObject("Msxml2.XMLHTTP");
+        }
+    }
+    if (!LaPeticion) {
+        alert("No se creó la petición");
+    }
+    LaPeticion.onreadystatechange = function () {
+        if (LaPeticion.readyState < 4) {
+            document.getElementById("datosTablaAlumnosAsignados").innerHTML = "<tr><td colspan='3'><img src='images/cargando.gif' alt='' style='width:25%'/></td></tr>";
+        } else if (LaPeticion.readyState === 4) {
+            if (LaPeticion.status === 200) {
+                var respuestaAjax = LaPeticion.responseText;
+                document.getElementById("datosTablaAlumnosAsignados").innerHTML = respuestaAjax;
+            } else {
+                alert("Error al leer la página");
+            }
+        }
+    }; // cierre de return function
+    LaPeticion.open('GET', 'bd/mostrar_alumnosAsignados.php', true);
+    LaPeticion.send();
+}
+
+
+
+function refrescarAlumnosEstadia() {
+    var LaPeticion = false;
+    if (window.XMLHttpRequest) {
+        LaPeticion = new XMLHttpRequest();
+    } else {
+        if (window.ActiveXObject) {
+            LaPeticion = new ActiveXObject("Msxml2.XMLHTTP");
+        }
+    }
+    if (!LaPeticion) {
+        alert("No se creó la petición");
+    }
+    LaPeticion.onreadystatechange = function () {
+        if (LaPeticion.readyState < 4) {
+            document.getElementById("datosTablaAlumnosAsignadosEstadia").innerHTML = "<tr><td colspan='3'><img src='images/cargando.gif' alt='' style='width:25%'/></td></tr>";
+        } else if (LaPeticion.readyState === 4) {
+            if (LaPeticion.status === 200) {
+                var respuestaAjax = LaPeticion.responseText;
+                document.getElementById("datosTablaAlumnosAsignadosEstadia").innerHTML = respuestaAjax;
+            } else {
+                alert("Error al leer la página");
+            }
+        }
+    }; // cierre de return function
+    LaPeticion.open('GET', 'bd/mostrar_alumnosAsignadosEstadia.php', true);
+    LaPeticion.send();
+}
 
 function mostrarContenido(elID) {
     return function () {
