@@ -2,7 +2,8 @@ var LaPeticion = false;
 this.onload=refrescarambos();
 
 function refrescarambos(){
-	refrescarAlumnos();
+        refrescarAlumnosAsignados();
+        refrescarAlumnosEstadia();
 	refrescar();
 }
 function login(){
@@ -172,7 +173,7 @@ function refrescarAlumnosAsignados() {
 
 
 
-function refrescarAlumnosEstadia() {
+function refrescarAlumnosEstadia(){
     var LaPeticion = false;
     if (window.XMLHttpRequest) {
         LaPeticion = new XMLHttpRequest();
