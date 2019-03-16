@@ -26,7 +26,6 @@ $tipo= $_POST['tipo'];
 
 $sql = "call SP_ACTUALIZAR_DOCENTE('$id','$nombre','$appat','$apmat','$matricula','$correo','$fecha','$tipo');";
 
-
 if (guardarDatos($sql)) {
     echo "<div class='alert alert-success alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>×</a><strong>¡Correcto!</strong> EL docente fue actualizado correctamente.</div>";
 } else {

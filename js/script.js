@@ -151,7 +151,7 @@ function mostrarContenido(elID) {
 
 function eliminar(id) {
     if (confirm("¿Está seguro de que desea eliminar al docente?")) {
-        peticion(); // creamos el httprequest  
+        peticion(); // creamos el httprequest
         LaPeticion.onreadystatechange = mostrarContenido('alertas_tabla');
         LaPeticion.open('POST', 'bd/eliminar_docente.php', true);
         LaPeticion.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

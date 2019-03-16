@@ -1,15 +1,15 @@
 <?php
-
+/*
 function conectarBD() {
     $conexion = mysqli_connect("localhost", "root", "", "utcbis");
     return $conexion;
-}
-/*
+} */
+
 function conectarBD() {
-    $conexion = mysqli_connect("sql173.main-hosting.eu.", "u969154419_grupo", "", "u969154419_grupo");
+    $conexion = mysqli_connect("sql173.main-hosting.eu", "u969154419_grupo", "Estadias2019", "u969154419_grupo");
     return $conexion;
 }
- */
+
 function desconectarBD($conexion) {
     $cerrarConexion = mysqli_close($conexion);
     return $cerrarConexion;
