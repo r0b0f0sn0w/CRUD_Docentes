@@ -5,6 +5,15 @@ function refrescarambos(){
 	refrescarAlumnos();
 	refrescar();
 }
+function login(){
+    var nombre = document.getElementById("usuario").value;
+    var password = document.getElementById("password").value;
+    if(nombre=="admin"&&password=="password"){
+        this.location("admin.php");
+    }else{
+        alert("Usuario o contraseña incorrectos");
+    }
+}//Cierra funcion de inicio de sesion
 
 function peticion() {
     if (window.XMLHttpRequest) {
