@@ -26,7 +26,7 @@ $password='UTCDocente';
 
 $estado='1';
 
-$sql = "call SP_CREAR_DOCENTE('$nombre','$appat','$apmat','$matricula','$correo','$password','$fecha','$tipo','$estado');";
+$sql = "insert into docente (nombre_docente,apellido_pat,apellido_mat,matricula,correo_electronico,password,fecha_nacimiento,id_tipo_docente,estado) values('$nombre','$appat','$apmat','$matricula','$correo','$password','$fecha','$tipo','$estado');";
 
 if (guardarDatos($sql)) {
     echo "<div class='alert alert-success alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>×</a><strong>¡Correcto!</strong> El docente fue agregado correctamente.</div>";

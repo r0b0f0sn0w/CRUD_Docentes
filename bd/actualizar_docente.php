@@ -24,10 +24,10 @@ $fecha = trim($tempfecha);
 
 $tipo= $_POST['tipo'];
 
-$sql = "call SP_ACTUALIZAR_DOCENTE('$id','$nombre','$appat','$apmat','$matricula','$correo','$fecha','$tipo');";
-
+$sql = "update docente set nombre_docente='$nombre',apellido_pat='$appat',apellido_mat='$apmat',matricula='$matricula',correo_electronico='$correo',fecha_nacimiento='$fecha',id_tipo_docente='$tipo' where id_docente='$id';";
+//echo $sql;
 if (guardarDatos($sql)) {
     echo "<div class='alert alert-success alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>×</a><strong>¡Correcto!</strong> EL docente fue actualizado correctamente.</div>";
 } else {
-    echo "<div class='alert alert-danger alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>×</a><strong>¡Error!</strong> No fue posible actualizar los datos del docente.</div>";
+echo "<div class='alert alert-danger alert-dismissable'><a href='#' class='close' data-dismiss='alert' aria-label='close'>×</a><strong>¡Error!</strong> No fue posible actualizar los datos del docente.</div>";
 }

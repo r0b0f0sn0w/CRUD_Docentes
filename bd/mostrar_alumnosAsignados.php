@@ -2,7 +2,7 @@
 
 include ("conexion.php");
 
-$sql = "select Estudiante.matricula as 'Matricula',Estudiante.nombres as 'NombreEst' ,Estudiante.apPaterno as 'AppPatEst',Estudiante.apMaterno as 'AppMatEst',Grupo.descripcion as 'Grupo',docente.nombre_docente as 'NombreDoc',docente.apellido_pat as 'AppPatDoc',docente.apellido_mat as 'AppMatDoc',tipo_docente.tipo as 'tipo' from Estudiante inner join Grupo on Estudiante.idGrupo=Grupo.idGrupo inner join docente on Grupo.id_docente=docente.id_docente inner join tipo_docente on docente.id_tipo_docente =tipo_docente.id_tipo_docente;";
+$sql = "select Estudiante.matricula as 'Matricula',Estudiante.nombres as 'NombreEst' ,Estudiante.apPaterno as 'AppPatEst',Estudiante.apMaterno as 'AppMatEst',Grupo.descripcion as 'Grupo',docente.nombre_docente as 'NombreDoc',docente.apellido_pat as 'AppPatDoc',docente.apellido_mat as 'AppMatDoc',tipo_docente.tipo as 'tipo' from Estudiante left join Grupo on Estudiante.idGrupo=Grupo.idGrupo left join docente on Grupo.id_docente=docente.id_docente left join tipo_docente on docente.id_tipo_docente =tipo_docente.id_tipo_docente;";
 
 $arregloActividades = traerDatos($sql);
 foreach ($arregloActividades as $item) {
